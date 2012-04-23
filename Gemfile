@@ -35,3 +35,4 @@ end
 
 #OmniAuth
 gem 'omniauth'
+gem 'omniauth-facebook'
