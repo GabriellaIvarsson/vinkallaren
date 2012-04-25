@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416130902) do
+ActiveRecord::Schema.define(:version => 20120425065650) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(:version => 20120416130902) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "wines", :force => true do |t|
+    t.integer  "nummer"
+    t.integer  "artikelID"
+    t.integer  "varnummer"
+    t.string   "namn"
+    t.float    "pris"
+    t.float    "volym"
+    t.float    "ppl"
+    t.string   "varugrupp"
+    t.string   "forpackning"
+    t.string   "land"
+    t.string   "producent"
+    t.integer  "ar"
+    t.string   "alkoholhalt"
+    t.integer  "ekologisk"
+    t.integer  "koscher"
+    t.string   "ravaror"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
