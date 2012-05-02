@@ -9,10 +9,20 @@ namespace :import do
 
 		# Loopa igenom alla rader
 		CSV.foreach(file, {:headers => true}) do |row|
+			theString = ''
+			(0..row.size-1).each do |i|
+				if theString != ""
+					theString = theString + ',' + row[i]
+
+				else
+					theString = row[i]
+				end
+			end
 
 			# Dela raden med avseende på ';'
-			theRow = row[0].split(';')
-
+			theRow = theString.split(';')
+			puts theRow
+			##puts theRow[7].to_s+","+theRow[8].to_s
 			# Lägg in vin om det inte redan finns.
 			@wine = Wine.find_or_create_by_nummer(
 				:nummer          	=>  theRow[0].to_i,
@@ -32,7 +42,7 @@ namespace :import do
 				:koscher 	        =>  theRow[14].to_i,
 				:ravaror          	=>  theRow[15].to_s
 			)
-			
+			#puts theRow[16]
 		end
 
 		puts "New posts were successfully processed."

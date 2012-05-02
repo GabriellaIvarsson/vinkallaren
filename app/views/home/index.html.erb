@@ -5,4 +5,30 @@
 
 <div data-role="content">
 
+	<div class="wine_header">
+		<h1>header</h1>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="wine_image">
+			bild
+		</div>
+
+		<div class="wine_info_wrapper">
+
+			<div class="wine_info1">
+				<h2><%= render :text => @random_wine.namn %></h2>
+				<h3><%= render :text => @random_wine.land%> <%= render :text => @random_wine.ar %></h3>
+				
+			</div>
+
+			<div class="wine_info2">
+				Pris: <%= render :text => @random_wine.pris %>
+			</div>
+
+		</div>
+
+	</div>
+	
 </div>
