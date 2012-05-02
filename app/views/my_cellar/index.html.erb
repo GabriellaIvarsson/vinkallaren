@@ -1,0 +1,11 @@
+<div data-role="header">
+	<h1>Min vink&auml;llare</h1>
+	<%= link_to 'Meny', :menu, "data-icon" => "grid", "class" => "ui-btn-left", "data-iconpos" => "notext", "data-direction" => "reverse" %>
+</div>
+
+<div data-role="content" >
+<ul data-role="listview" data-theme="g">
+		<li data-icon="false"><%= link_to "Mina Favoriter", :home %></li>
+		<li data-icon="false"><%= link_to "Vill Testa", :profile %></li>
+	</ul>	
+</div>

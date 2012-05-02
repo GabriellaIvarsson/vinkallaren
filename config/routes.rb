@@ -1,4 +1,6 @@
 Vinkallaren::Application.routes.draw do
+  get "my_cellar/index"
+
   get "profile/index"
 
   get "menu/index"
@@ -20,6 +22,7 @@ Vinkallaren::Application.routes.draw do
   get   '/home', :to => 'home#index', :as => :home
   get   '/menu', :to => 'menu#index', :as => :menu
   get   '/profile', :to => 'profile#index', :as => :profile
+  get   '/my_cellar', :to => 'my_cellar#index', :as => :my_cellar
 
   # Create a simple login form where the user will see a simple “Connect with Facebook” link.
   get   '/login', :to => 'sessions#new', :as => :login
