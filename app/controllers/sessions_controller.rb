@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
 		auth_hash = request.env['omniauth.auth']
 			
 			# Check whether an authorization exists for that provider and that uid. If one exists, we welcome our user back.
-		@authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
-		if @authorization
+		$authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+		if $authorization
 			#render :text => "Welcome back #{@authorization.user.name}! You have already signed up."
 
 		# If no authorization exists, we sign the user up. We create a new user with the name and email 
@@ -29,11 +29,11 @@ class SessionsController < ApplicationController
 	end
 
 	def failure
-	  	render :text => "Sorry, but you didn't allow access to our app!"
+	  	render :text => "Du har inte accepterat &aring;tkomst f&ouml;r v&aring;r app!"
 	end
 
 	def destroy
 		session[:user_id] = nil
-		render :text => "You've logged out!"
+		render :text => "Du &auml;r nu utloggad!"
 	end
 end

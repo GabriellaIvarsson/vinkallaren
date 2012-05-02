@@ -3,6 +3,12 @@
 	<%= link_to 'Meny', :menu, "data-icon" => "grid", "class" => "ui-btn-left", "data-iconpos" => "notext", "data-direction" => "reverse" %>
 </div>
 
-<div data-role="content">
+<div data-role="content" >
+	<div class="profile_header">
+		<p>Du &auml;r inloggad som <%= render :text => @user_info %></p>
+	</div>
 
+	<div class="profile_content">
+	 	<%= link_to "Logga ut", "/logout", { :target => "_self" } %>
+	</div>		
 </div>

@@ -31,7 +31,7 @@ Vinkallaren::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
 
   # Create the app route for logging out.
-  get '/logout', :to => 'sessions#destroy'
+  get '/logout', :to => 'sessions#destroy', :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
