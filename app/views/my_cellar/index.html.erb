@@ -1,0 +1,14 @@
+<div data-role="header">
+	<h1>Min vink&auml;llare</h1>
+	<%= link_to 'Meny', :menu, "data-icon" => "grid", "class" => "ui-btn-left", "data-iconpos" => "notext", "data-direction" => "reverse" %>
+</div>
+
+<div data-role="content" >
+	<ul data-role="listview" data-theme="g">
+
+		<!-- Loop through all categories and print them -->
+		<% @cats.each_with_index do |cat, index| %>
+			<li data-icon="false"><%= link_to cat.categoryname, {:controller => :cellar_template, :action => "index", :shelf => cat.id } %></li>
+		<% end %>
+	</ul>	
+</div>

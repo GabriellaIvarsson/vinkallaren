@@ -1,0 +1,14 @@
+<div data-role="header">
+	<h1>Meny</h1>
+	<%= link_to '', :back, "data-icon" => "arrow-r", "data-iconpos" => "notext", "class" => "ui-btn-right" %>
+</div>
+
+<div data-role="content">
+	<ul data-role="listview" data-theme="g">
+		<li data-icon="false"><%= link_to "Hem", :home %></li>
+		<li data-icon="false"><%= link_to "Profil", :profile %></li>
+		<li data-icon="false"><%= link_to "Min vinkällare", :my_cellar %></li>
+		<li data-icon="false"><a href="">Topplistor</a></li>
+		<li data-icon="false"><a href="">V&auml;nner</a></li>
+	</ul>
+</div>

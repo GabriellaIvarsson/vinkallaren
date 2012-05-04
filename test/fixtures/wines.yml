@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nummer: 1
+  artikelID: 1
+  varnummer: 1
+  namn: MyString
+  pris: 1.5
+  volym: 1.5
+  ppl: 1.5
+  varugrupp: MyString
+  forpackning: MyString
+  land: MyString
+  producent: MyString
+  ar: 1
+  alkoholhalt: MyString
+  ekologisk: 1
+  koscher: 1
+  ravaror: MyString
+
+two:
+  nummer: 1
+  artikelID: 1
+  varnummer: 1
+  namn: MyString
+  pris: 1.5
+  volym: 1.5
+  ppl: 1.5
+  varugrupp: MyString
+  forpackning: MyString
+  land: MyString
+  producent: MyString
+  ar: 1
+  alkoholhalt: MyString
+  ekologisk: 1
+  koscher: 1
+  ravaror: MyString
