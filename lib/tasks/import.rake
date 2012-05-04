@@ -71,10 +71,10 @@ namespace :import do
 			theRow = theString.split(';')
 
 			# Lägg in vin om det inte redan finns.
-			@my_cellar = CellarContent.find_or_create_by_nummer_and_catagory_id(
+			@my_cellar = CellarContent.find_or_create_by_nummer_and_categoryid(
 				:uid	          	=>  theRow[0].to_s,
 				:nummer 	      	=>  theRow[1].to_i,
-				:category_id      	=>  theRow[2].to_i
+				:categoryid      	=>  theRow[2].to_i
 				
 			)
 			#puts theRow[16]
