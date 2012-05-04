@@ -77,10 +77,43 @@ namespace :import do
 				:categoryid      	=>  theRow[2].to_i
 				
 			)
-			#puts theRow[16]
 		end
 
 		puts "Favorites were successfully processed."
+		
+	end
+
+
+
+	task :insertcategories => :environment do 
+
+  		# Ladda csv-filen
+		file = "db/categories.csv"
+
+		# Loopa igenom alla rader
+		CSV.foreach(file, {:headers => true}) do |row|
+			theString = ''
+			(0..row.size-1).each do |i|
+				if theString != ""
+					theString = theString + ',' + row[i]
+
+				else
+					theString = row[i]
+				end
+			end
+
+			# Dela raden med avseende på ';'
+			theRow = theString.split(';')
+
+			# Lägg in vin om det inte redan finns.
+			@my_categories = Category.find_or_create_by_categoryid_and_categoryname(
+				:categoryid	        =>  theRow[0].to_i,
+				:categoryname 	    =>  theRow[1].to_s
+				
+			)
+		end
+
+		puts "Categories were successfully processed."
 		
 	end
 end
