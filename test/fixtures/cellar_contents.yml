@@ -3,9 +3,9 @@
 one:
   uid: MyString
   nummer: 1
-  category_id: 1
+  categoryid: 1
 
 two:
   uid: MyString
   nummer: 1
-  category_id: 1
+  categoryid: 1
