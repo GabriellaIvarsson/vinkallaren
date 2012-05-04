@@ -21,8 +21,7 @@ namespace :import do
 
 			# Dela raden med avseende på ';'
 			theRow = theString.split(';')
-			puts theRow
-			##puts theRow[7].to_s+","+theRow[8].to_s
+	
 			# Lägg in vin om det inte redan finns.
 			@wine = Wine.find_or_create_by_nummer(
 				:nummer          	=>  theRow[0].to_i,
@@ -45,7 +44,43 @@ namespace :import do
 			#puts theRow[16]
 		end
 
-		puts "New posts were successfully processed."
+		puts "New wines were successfully processed."
+		
+	end
+
+
+
+	task :insertfavorites => :environment do 
+
+  		# Ladda csv-filen
+		file = "db/favorites.csv"
+
+		# Loopa igenom alla rader
+		CSV.foreach(file, {:headers => true}) do |row|
+			theString = ''
+			(0..row.size-1).each do |i|
+				if theString != ""
+					theString = theString + ',' + row[i]
+
+				else
+					theString = row[i]
+				end
+			end
+
+			# Dela raden med avseende på ';'
+			theRow = theString.split(';')
+
+			# Lägg in vin om det inte redan finns.
+			@my_cellar = CellarContent.find_or_create_by_nummer_and_catagory_id(
+				:uid	          	=>  theRow[0].to_s,
+				:nummer 	      	=>  theRow[1].to_i,
+				:category_id      	=>  theRow[2].to_i
+				
+			)
+			#puts theRow[16]
+		end
+
+		puts "Favorites were successfully processed."
 		
 	end
 end
