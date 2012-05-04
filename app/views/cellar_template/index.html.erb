@@ -1,0 +1,13 @@
+<div data-role="header">
+	<h1><%= @cat.categoryname %></h1>
+	<%= link_to 'Tillbaka', :back, "data-icon" => "arrow-l", "class" => "ui-btn-left", "data-direction" => "reverse" %>
+</div>
+
+<div data-role="content" >
+	<ul data-role="listview" data-theme="g">
+		<% @wines.each do |wine| %>
+			<li data-icon="false"><%= link_to wine.namn, :menu %></li>
+		<% end %>
+	</ul>
+
+</div>
