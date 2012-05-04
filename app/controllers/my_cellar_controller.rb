@@ -1,4 +1,6 @@
 class MyCellarController < ApplicationController
-  def index
-  end
+	def index
+		@cats = Category.all
+		#puts @cats
+	end
 end

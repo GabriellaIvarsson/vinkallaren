@@ -4,8 +4,11 @@
 </div>
 
 <div data-role="content" >
-<ul data-role="listview" data-theme="g">
-		<li data-icon="false"><%= link_to "Mina Favoriter", :home %></li>
-		<li data-icon="false"><%= link_to "Vill Testa", :profile %></li>
+	<ul data-role="listview" data-theme="g">
+
+		<!-- Loop through all categories and print them -->
+		<% @cats.each_with_index do |cat, index| %>
+			<li data-icon="false"><%= link_to cat.categoryname, :home %></li>
+		<% end %>
 	</ul>	
 </div>
